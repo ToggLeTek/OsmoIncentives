@@ -14,11 +14,16 @@ def get_columns(pools : Pools, pool : Pool) -> list[str]:
     based_assets = based(pool.assets)
     cur_total = osmo_apr + fee_apr + external_apr
     new_total = new_osmo_apr + fee_apr + external_apr
+    for osmo_pool in based(pool.assets[0]):
+        if based(pool.assets[0]) is not "OSMO":
+            osmo_pool = "FALSE"
+        return osmo_pool == "TRUE"
     return list(map(str, [
         pool.category,
         pool.pid,
         based_assets[0],
         based_assets[1],
+        osmo_pool,
         pool.liquidity,
         pool.fees_collected,
         pool.fee_share(),

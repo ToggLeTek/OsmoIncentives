@@ -78,6 +78,8 @@ share_14 = 0.2
 # Accuracy of the weighting split, sufficiently small incentives will not be allocated
 gauge_precision = 100000000
 
+test_param = list()
+
 # Chain data - does not enable, just for APR display purposes
 superfluid = {
     1, 3, 9, 15, 42, 481, 497, 584, 601, 604, 674, 678, 704, 722, 812
